@@ -27,7 +27,7 @@ class LoginController extends Controller
             $request->session()->regenerate();
             return redirect()->intended(route('backend.beranda'));
         }
-        return back()->with('eror','Login Gagal');
+        return back()->with('error','Login Gagal');
     }
 
     public function logoutBackend(){

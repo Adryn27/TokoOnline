@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
             'nama' => 'Willy Andryan',
             'email' => 'willy@gmail.com',
             'role' => '0',
-            'status' => 1,
+            'status' => 0,
             'hp' => '08234567890',
             'password' => bcrypt('p@55word'),
         ]);
