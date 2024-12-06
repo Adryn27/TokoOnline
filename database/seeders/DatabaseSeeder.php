@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Kategori;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -13,8 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
+        // TABLE USER
+        
         User::create([
             'nama' => 'Administrator',
             'email' => 'admin@gmail.com',
@@ -31,6 +32,24 @@ class DatabaseSeeder extends Seeder
             'status' => 0,
             'hp' => '08234567890',
             'password' => bcrypt('p@55word'),
+        ]);
+
+        //TABLE KATEGORI
+        
+        Kategori::create([
+            'nama_kategori'=>'Keyboard'
+        ]);
+        Kategori::create([
+            'nama_kategori'=>'Monitor'
+        ]);
+        Kategori::create([
+            'nama_kategori'=>'Flashdisk'
+        ]);
+        Kategori::create([
+            'nama_kategori'=>'Mouse'
+        ]);
+        Kategori::create([
+            'nama_kategori'=>'Cooling Pad'
         ]);
     }
 }
