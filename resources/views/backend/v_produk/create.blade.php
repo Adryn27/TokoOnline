@@ -3,6 +3,7 @@
 
 <div class="card">
     <div class="card-body">
+        <h4 class="card-title">{{ $judul }}</h4>
         <form action="{{ route('backend.produk.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
@@ -10,6 +11,7 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>Foto</label>
+                        <img class="foto-preview">
                         <input type="file" name="foto" class="form-control @error('foto') is-invalid @enderror" onchange="previewFoto()">
 
                         @error('foto')
@@ -48,7 +50,7 @@
 
                     <div class="form-group">
                         <label>Detail</label>
-                        <textarea name="detail" class="form-control @error('detail') is-invalid @enderror"></textarea>
+                        <textarea name="detail" class="form-control @error('detail') is-invalid @enderror" id="ckeditor"></textarea>
                         @error('detail')
                             <div class="invalid-feedback alert-danger">
                                 {{ $message }}
