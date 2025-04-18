@@ -9,9 +9,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     // return view('welcome');
-    return redirect()->route('backend.login');
+    return redirect()->route('beranda');
 });
 
+// Backend
 Route::get('backend/beranda',[BerandaController::class, 'berandaBackend'])->name('backend.beranda')->middleware('auth');
 
 Route::get('backend/login',[LoginController::class,'loginBackend'])->name('backend.login');
@@ -35,3 +36,9 @@ Route::post('foto-produk/store',[ProdukController::class,'storeFoto'])->name('ba
 //Route untuk menghapus foto
 Route::delete('foto-produk/{id}',[ProdukController::class,'destroyFoto'])->name('backend.foto_produk.destroy')->middleware('auth');
 
+// Frontend 
+Route::get('/beranda', [BerandaController::class, 'index'])->name('beranda');
+
+Route::get('/produk/detail/{id}', [ProdukController::class, 'detail'])->name('produk.detail');
+Route::get('/produk/kategori/{id}', [ProdukController::class, 'produkKategori'])->name('produk.kategori');
+Route::get('/produk/all', [ProdukController::class, 'produkAll'])->name('produk.all');
